@@ -7,7 +7,13 @@
         public void Dispose()
         {
             Dispose(true);
+            //Prevents the garbage collector from calling the finalizer if Dispose() has already been called.
             GC.SuppressFinalize(this);
+        }
+
+        ~CustomDisposable()
+        { 
+            Dispose(false); 
         }
 
         protected virtual void Dispose(bool disposing)

@@ -24,7 +24,7 @@ namespace Practice.BuildComplicatedFlow.Steps.CopyMainPart0
         public void Dispose()
         {
             Dispose(true);
-            GC.SuppressFinalize(this);
+            //GC.SuppressFinalize(this);
         }
 
         protected virtual void Dispose(bool disposing)
@@ -32,11 +32,17 @@ namespace Practice.BuildComplicatedFlow.Steps.CopyMainPart0
             if (_disposed)
                 return;
 
-            if (disposing) {
+            if (disposing)
+            {
                 // Free any other managed objects here.
             }
 
             _disposed = true;
+        }
+
+        ~CopyPart0Operation0()
+        {
+            Dispose(false);
         }
     }
 }
