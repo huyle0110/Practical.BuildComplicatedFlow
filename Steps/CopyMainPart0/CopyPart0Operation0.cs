@@ -1,7 +1,5 @@
 ﻿using Practice.BuildComplicatedFlow.Interface;
 using Practice.BuildComplicatedFlow.Services;
-using Practice.BuildComplicatedFlow.Steps.BaseStep;
-using UsingEnumToBuildFlow.Enums;
 
 namespace Practice.BuildComplicatedFlow.Steps.CopyMainPart0
 {
@@ -24,7 +22,7 @@ namespace Practice.BuildComplicatedFlow.Steps.CopyMainPart0
         public void Dispose()
         {
             Dispose(true);
-            //GC.SuppressFinalize(this);
+            GC.SuppressFinalize(this);
         }
 
         protected virtual void Dispose(bool disposing)

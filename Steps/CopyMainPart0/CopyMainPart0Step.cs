@@ -24,7 +24,8 @@ namespace Practice.BuildComplicatedFlow.Steps.CopyMainPart0
             if (_disposed)
                 return;
 
-            if (disposing) {
+            if (disposing)
+            {
                 // Free any other managed objects here.
             }
 
