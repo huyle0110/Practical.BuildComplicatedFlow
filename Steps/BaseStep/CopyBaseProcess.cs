@@ -7,7 +7,7 @@ namespace Practice.BuildComplicatedFlow.Steps.BaseStep
     public abstract class CopyBaseProcess : CustomDisposable, ICopyBaseProcess<ICopyContext>
     {
         protected Dictionary<ContentTypeEnum, Func<Task<bool>>> subActions = new Dictionary<ContentTypeEnum, Func<Task<bool>>>();
-        private ICopyContext _context;
+        protected ICopyContext _context;
         protected CopyBaseProcess()
         {
         }

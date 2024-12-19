@@ -1,4 +1,4 @@
-﻿using Practice.BuildComplicatedFlow.Interface;
+﻿using Practice.BuildComplicatedFlow.Common;
 using Practice.BuildComplicatedFlow.Steps.BaseStep;
 using UsingEnumToBuildFlow.Enums;
 
@@ -14,6 +14,15 @@ namespace Practice.BuildComplicatedFlow.Steps.CopyMainPart0
 
         private async Task<bool> CopyType1(ContentTypeEnum contentTypeEnum)
         {
+            _context.CustomDataLogging = new CustomDataLogging
+            {
+                ActionName = nameof(CopyType1),
+                StepNumber = (int)CopyMainStep.CopyMainPart0,
+                StepName = nameof(CopyMainStep.CopyMainPart0),
+                SubStepNumber = (int)CopyMainPart0StepEnum.Task1,
+                SubStepName = nameof(CopyMainPart0StepEnum.Task1)
+            };
+            LogFactory.LogStart(_context.Logger, _context.CustomDataLogging);
             await Task.CompletedTask;
             return true;
         }

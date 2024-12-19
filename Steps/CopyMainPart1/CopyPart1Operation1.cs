@@ -16,6 +16,18 @@ namespace Practice.BuildComplicatedFlow.Steps.CopyMainPart1
             return ExecutionOperationResult.DoneSuccessfully(nameof(CopyPart1Operation1));
         }
 
+        protected override void RegisterSubActions()
+        {
+            AddSubAction(UsingEnumToBuildFlow.Enums.ContentTypeEnum.Type2, () => { return DoCopyType2(); });
+            base.RegisterSubActions();
+        }
+
+        public async Task<bool> DoCopyType2()
+        {
+            await Task.CompletedTask;
+            return true;
+        }
+
         private bool _disposed = false;
 
         protected override void Dispose(bool disposing)

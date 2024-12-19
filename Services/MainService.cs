@@ -18,7 +18,6 @@ namespace Practice.BuildComplicatedFlow.Services
         {
             var copyContext = new CopyContext()
             {
-                Step = CopyMainStep.CopyMainPart0,
                 Logger = _logger
             };
 
@@ -27,6 +26,7 @@ namespace Practice.BuildComplicatedFlow.Services
             //Execute step by step
             foreach(CopyMainStep step in Enum.GetValues(typeof(CopyMainStep)))
             {
+                copyContext.Step = step;
                 await _copyProcess.ExecuteStepAsync(copyContext, step);
             }
         }
